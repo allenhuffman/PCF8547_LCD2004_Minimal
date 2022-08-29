@@ -1,5 +1,7 @@
-# PCF8547_LCD2004
-Bare minimum Arduino code for LCD2004 and PCF8547 I2C interface chip. For when size matters.
+# PCF8547_LCD2004 (for Arduino)
+Bare minimum Arduino code for LCD2004 (LCD1602 with changes, etc.) and PCF8547 I2C interface chip. For when size matters.
+
+I was writing code for a PIC24 processor using the CCS IDE, and used an Arduino to figure out how to talk to this LCD and I2C controller. I thought I'd share the Arduino code in case anyone else is needing to do the same thing.
 
 The LCD2004 (where '20' is the number of characters across and '04' is the number of lines) is interfaced through 11 I/O pins. 8 for Data, and three for Register Select, Read/Write and Enable. It can also be configured to operate in a 4-bit mode where it only uses 4 Data pins, reducing the needed I/O down to 7 I/O pins.
 
@@ -52,5 +54,7 @@ From the main .ino:
 // column (x) and row (y) to the actual offset of these two internal
 // 64-byte lines.
 </pre>
+
+You should be able to easily modify this code to work on an LCD1602 or other configurations of compatible LCD screens just by changing the LCDSetXY() routine offsets. I have LCD1602s so when I get time I will update this code to support them, as well.
 
 Good luck! Drop me a note if you have any questions.
