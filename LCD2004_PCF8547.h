@@ -15,6 +15,8 @@
 // [7  6  5  4  3  2  1  0 ]
 // |D7 D6 D5 D4 BL -E RW RS
 //
+// NOTE: This is hard-coded to assume the upper four bits are
+// the 4 data lines to the LCD, in that order.
 
 typedef enum
 {
