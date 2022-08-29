@@ -11,13 +11,15 @@ This is very simple code, and hopefully documented well enouhg that it helps som
 
 This code can also be modified to work with LCD1602 and other screens. The main change is in the Locate X/Y routine. The LCD data is not organized as multiple lines of 20 charaters (or 16). Instead, it is just a buffer of screen memory that is mapped to the display. In the case of the LCD2004, the screen is basically 128 bytes of memory, with the FIRST line being bytes 0-19, the SECOND line being bytes 64-83, the THIRD line being bytes 20-39, and the FOURTH line being bytes 84-103.
 
-Consider this diagram"
+Consider this diagram:
+<pre>
 +--------------------+
 |ABCDEFGHIJKLMNOPQRST| (bytes 0-19)
 |abcdefghijklmnopqrst| (bytes 64-83)
 |UVWXYZ              | (bytes 20-39)
 |uvwxyz              | (bytes 84-103)
 +--------------------+
+</pre>
 
 If you were to start at memory offset 0 (top left of the display) and write 80 bytes of data (thinking you'd get 20, 20, 20 and 20 on the display), that wouldn't happen ;-)  You'd see some of your data did not show up since it was writing out in the memory that is not mapped in to the display. (You can also use that memory for data storage, but I did not implement any READ routines in this code -- yet.)
 
