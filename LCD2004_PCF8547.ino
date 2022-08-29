@@ -277,6 +277,9 @@ void LCDClear(void)
 }
 
 
+// NOT WORKING YET! I was experimenting with doing a READ operation, and
+// seeing if I could poll the BF (busy flag) bit.
+#if 0
 void LCDWaitForBusyFlag (void)
 {
   while (1)
@@ -299,6 +302,7 @@ void LCDWaitForBusyFlag (void)
     Wire.endTransmission ();
   }
 }
+#endif // 0
 
 #endif /* LCD2004_PCF8547_C */
 
