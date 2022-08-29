@@ -23,6 +23,7 @@ If you were to start at memory offset 0 (top left of the display) and write 80 b
 
 From the main .ino:
 
+<pre>
 /*--------------------------------------------------------------------------*/
 // Set LCD cursor position.
 /*--------------------------------------------------------------------------*/
@@ -48,5 +49,6 @@ From the main .ino:
 // Because of this, we will use a simple translation to get between
 // column (x) and row (y) to the actual offset of these two internal
 // 64-byte lines.
+</pre>
 
 Good luck! Drop me a note if you have any questions.
