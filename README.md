@@ -1,5 +1,19 @@
-# PCF8547_LCD2004 (for Arduino)
+# PCF8547_LCD2004 Minimal (for Arduino)
 Bare minimum Arduino code for LCD2004 (LCD1602 with changes, etc.) and PCF8547 I2C interface chip. For when size matters.
+
+Check my other repositories for a larger, fuller version of this code that supports all of features of the LCD.
+
+This code supports the following:
+* Initialize the LCD2004 (or LCD1602).
+* Clear Screen
+* Set Cursor Position and Write String
+* Send Instruction Byte
+* Send Data Byte (single)
+* Send Data Bytes (buffer)
+
+Using LCDInit(), LCDClear() and LCDWriteDataString (0, 0, "Hello ,world!") you can do basic stuff. You can also use the support functions to manually send any custom Instruction or Data, such as loading character RAM for custom characters.
+
+---
 
 I was writing code for a PIC24 processor using the CCS IDE, and used an Arduino to figure out how to talk to this LCD and I2C controller. I thought I'd share the Arduino code in case anyone else is needing to do the same thing.
 
