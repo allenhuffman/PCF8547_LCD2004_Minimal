@@ -1,6 +1,8 @@
 # PCF8547_LCD2004 Minimal (for Arduino)
 Bare minimum Arduino code for LCD2004 (LCD1602 with changes, etc.) and PCF8547 I2C interface chip. For when size matters.
 
+2022-12-07 TODO: I just updated the "full" version of this code to support GPIO mode, based on using the WOKWI.com Arduino simulator. I need to split out the extra code from the full version in a separate file, so it can all be one project. Include some, or all, to get the levels of functionality. If you want GPIO support, you can see the changes I made to the Write functions in that project (simple changes) plus some config stuff for I/O pins in the header file. That code now conditionally compiles -- if you define the I2C address, it uses the Wire library, else GPIO.
+
 Check my other repositories for a larger, fuller version of this code that supports all of features of the LCD.
 
 This code supports the following:
